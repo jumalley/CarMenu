@@ -286,7 +286,9 @@ function OpenCarMenu()
                 {
                     title = 'Allumer/éteindre le moteur',
                     description = 'Allumer/éteindre le moteur',
-                    event = 'carmenu:turnengineoff'
+                    onSelect = function()
+                        ExecuteCommand('engine')
+                    end
                 },
                 {
                     title = 'Portes',
@@ -297,6 +299,13 @@ function OpenCarMenu()
                     title = 'Fenêtres',
                     description = 'Ouvrir / fermer les fenêtres',
                     event = "carmenu:openwindowsmenu"
+                },
+                {
+                    title = 'Cléfs',
+                    description = 'Ouvrir / fermer les portières du véhicule',
+                    onSelect = function()
+                        ExecuteCommand('usekey')
+                    end
                 },
 
             }
@@ -316,37 +325,6 @@ RegisterCommand("carmenu", function()
         OpenCarMenu()
     else
     end
-end)
-
---[[
-█▀▀ █▄░█ █▀▀ █ █▄░█ █▀▀
-██▄ █░▀█ █▄█ █ █░▀█ ██▄
-]]--
-
-local engineoff = true
-RegisterNetEvent("carmenu:turnengineoff", function()
-    local player = PlayerPedId()
-    local vehicle = GetVehiclePedIsIn(player, false)
-    local engineoff = GetIsVehicleEngineRunning(vehicle)
-    if vehicle == 0 or GetPedInVehicleSeat(vehicle, -1) ~= player then return end
-    if GetIsVehicleEngineRunning(vehicle) then
-        lib.notify({
-            title = 'Véhicule',
-            description = 'Vous avez éteint votre véhicule.',
-            type = 'success'
-        })
-    else
-        lib.notify({
-            title = 'Véhicule',
-            description = 'Vous allumez votre moteur !',
-            type = 'success'
-        })
-    end
-    while (enigneoff == false) do
-        SetVehicleUndriveable(vehicle,true)
-        Wait(0)
-    end
-    SetVehicleEngineOn(vehicle, not GetIsVehicleEngineRunning(vehicle), false, true)
 end)
 
 --[[
@@ -411,6 +389,7 @@ RegisterNetEvent('carmenu:opendoorsmenu', function(data)
                 description = 'Fermer toutes les portes',
                 event = 'carmenu:closealldoors'
             },
+
         }
     })
     lib.showContext('carmenu_doors')
