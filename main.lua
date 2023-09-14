@@ -361,21 +361,21 @@ RegisterNetEvent('carmenu:opendoorsmenu', function(data)
         options = {
             {
                 title = 'Ouvrir/Fermer porte',
-                description = 'Porte avant gauche',
+                description = 'Avant gauche',
                 onSelect = function()
                     doorToggle(0)
                 end
             },
             {
                 title = 'Ouvrir/Fermer porte',
-                description = 'Porte avant droite',
+                description = 'Avant droite',
                 onSelect = function()
                     doorToggle(1)
                 end
             },
             {
                 title = 'Ouvrir/Fermer porte',
-                description = 'Porte arrière gauche',
+                description = 'Arrière gauche',
                 onSelect = function()
                     doorToggle(2)
                 end
@@ -383,7 +383,7 @@ RegisterNetEvent('carmenu:opendoorsmenu', function(data)
             },
             {
                 title = 'Ouvrir/Fermer porte',
-                description = 'Porte arrière droite',
+                description = 'Arrière droite',
                 onSelect = function()
                     doorToggle(3)
                 end
@@ -397,7 +397,7 @@ RegisterNetEvent('carmenu:opendoorsmenu', function(data)
             },
             {
                 title = 'Ouvrir/Fermer coffre',
-                description = 'Ouvrir le coffre',
+                description = 'Coffre du véhicule',
                 onSelect = function()
                     doorToggle(5)
                 end
@@ -457,29 +457,29 @@ RegisterNetEvent('carmenu:openwindowsmenu', function(data)
         end,
         options = {
             {
-                title = 'Baisser fenêtre',
-                description = 'Baisser la fenêtre avant gauche',
+                title = 'Baisser/Remonter fenêtre',
+                description = 'Avant gauche',
                 onSelect = function()
                     windowToggle(0, 0)
                 end
             },
             {
-                title = 'Baisser fenêtre',
-                description = 'Baisser la fenêtre avant droite',
+                title = 'Baisser/Remonter fenêtre',
+                description = 'Avant droite',
                 onSelect = function()
                     windowToggle(1, 1)
                 end
             },
             {
-                title = 'Baisser fenêtre',
-                description = 'Baisser la fenêtre arrière gauche',
+                title = 'Baisser/Remonter fenêtre',
+                description = 'Arrière gauche',
                 onSelect = function()
                     windowToggle(3, 2)
                 end
             },
             {
-                title = 'Baisser fenêtre',
-                description = 'Baisser la fenêtre arrière droite',
+                title = 'Baisser/Remonter fenêtre',
+                description = 'Arrière droite',
                 onSelect = function()
                     windowToggle(2, 3)
                 end
