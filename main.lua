@@ -380,7 +380,6 @@ RegisterNetEvent('carmenu:opendoorsmenu', function(data)
                     doorToggle(2)
                 end
             },
-            },
             {
                 title = 'Ouvrir/Fermer porte',
                 description = 'Arrière droite',
