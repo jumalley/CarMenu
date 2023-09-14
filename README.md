@@ -20,5 +20,5 @@ Now support qs-vehiclekeys.
 
 *Dependencies*
 
-[ox_lib]([https://www.google.com](https://github.com/overextended/ox_lib)https://github.com/overextended/ox_lib)
+[ox_lib](https://github.com/overextended/ox_lib)
 [qs-vehiclekeys](https://buy.quasar-store.com/category/2157114)
